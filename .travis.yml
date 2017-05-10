@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - '7'
+script:
+  - npm intsall && npm run lint
+branches:
+  only:
+    - master
