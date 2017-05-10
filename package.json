@@ -1,0 +1,31 @@
+{
+  "name": "hziee-api-koa",
+  "version": "1.0.0",
+  "description": "The API to get the data of hziee EAS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon --exec npm run start",
+    "lint": "eslint .",
+    "prod": "export NODE_ENV=production && pm2 start app.js --name='hziee-api'"
+  },
+  "author": "clarkzsd <clarkzsd@gmail.com> (http://zhoushidong.cc/)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "cheerio-tableparser": "^1.0.1",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json-error": "^3.1.2",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.1.1",
+    "superagent": "^3.5.2",
+    "superagent-charset": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0"
+  }
+}
