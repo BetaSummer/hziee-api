@@ -26,27 +26,6 @@ async function getExams(url, cookie, header, stuId) {
       .set('Cookie', cookie)
       .set(header)
       .set('Referer', `${url}${stuId}`)
-      .send({
-        __EVENTTARGET: 'xqd',
-      })
-      .send({
-        __EVENTARGUMENT: '',
-      })
-      .send({
-        __LASTFOCUS: '',
-      })
-      .send({
-        __VIEWSTATE: '/wEPDwUJNjg3MDc5MzMzD2QWAgIBD2QWBAIBDxAPFgYeDURhdGFUZXh0RmllbGQFAnhuHg5EYXRhVmFsdWVGaWVsZAUCeG4eC18hRGF0YUJvdW5kZ2QQFQIJMjAxNi0yMDE3CTIwMTUtMjAxNhUCCTIwMTYtMjAxNwkyMDE1LTIwMTYUKwMCZ2cWAWZkAgUPEGRkFgECAWRkuD4DXBwdVA1GfNg6wUVMIYMuW6I=',
-      })
-      .send({
-        __EVENTVALIDATION: '/wEWCALAwbaVBwLOmbWVDAKe8p7VAgKf8qKVAwLOmemVDALB9sN7AsD2w3sCw/bDe13017Plc8YEIJHovi7ZPXOBJYpy',
-      })
-      .send({
-        xnd: '2016-2017',
-      })
-      .send({
-        xqd: '1',
-      })
       .redirects(0);
     const $ = cheerio.load(result.text, {
       decodeEntities: false,
