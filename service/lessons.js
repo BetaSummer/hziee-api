@@ -118,14 +118,14 @@ async function getAllLessons(url, cookie, header, stuId) {
 
 class LessonService {
   static async index(ctx) {
-    const cookie = ctx.query.cookie;
+    const cookie = ctx.headers.authorization;
     const stuId = ctx.query.stuId;
     const lessons = await getAllLessons(scheduleUrl, cookie, baseHeader, stuId);
     if (lessons) {
-      ctx.body = JSON.stringify(lessons);
+      ctx.body = lessons;
       ctx.status = 200;
     } else {
-      ctx.throw(400, 'Bad Request');
+      ctx.throw(401, 'Unauthorized');
     }
   }
 }

@@ -43,7 +43,7 @@ async function getExams(url, cookie, header, stuId) {
     const examArr = [];
     let exam;
     for (let i = 0; i < data[0].length - 1; i += 1) {
-      exam = new Exam(data[0][i + 1], data[1][i + 1], data[2][2 + 1], data[3][i + 1]);
+      exam = new Exam(data[0][i + 1], data[1][i + 1], data[2][i + 1], data[3][i + 1]);
       examArr.push(exam);
     }
     return examArr;
@@ -54,11 +54,11 @@ async function getExams(url, cookie, header, stuId) {
 
 class ExamService {
   static async index(ctx) {
-    const cookie = ctx.query.cookie;
+    const cookie = ctx.headers.authorization;
     const stuId = ctx.query.stuId;
     const exams = await getExams(examUrl, cookie, baseHeader, stuId);
     if (exams === null) {
-      ctx.throw(400, 'Bad request');
+      ctx.throw(401, 'Unauthorized');
     } else if (exams === '') {
       ctx.throw(404, 'The data are unavailable now');
     } else {
