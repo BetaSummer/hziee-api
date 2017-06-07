@@ -63,7 +63,7 @@ class ExamService {
       ctx.throw(404, 'The data are unavailable now');
     } else {
       ctx.body = JSON.stringify(exams);
-      this.status = 200;
+      ctx.status = 200;
     }
   }
 }
