@@ -1,4 +1,4 @@
-const Exam = require('../model/exam');
+const Exam = require('../entity/exam');
 const config = require('../config/config');
 const superagent = require('superagent');
 const cheerioTableparser = require('cheerio-tableparser');
@@ -62,7 +62,7 @@ class ExamService {
     } else if (exams === '') {
       ctx.throw(404, 'The data are unavailable now');
     } else {
-      ctx.body = JSON.stringify(exams);
+      ctx.body = exams;
       ctx.status = 200;
     }
   }

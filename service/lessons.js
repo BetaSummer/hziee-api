@@ -3,7 +3,7 @@ const cheerioTableparser = require('cheerio-tableparser');
 const cheerio = require('cheerio');
 const charset = require('superagent-charset');
 const config = require('../config/config');
-const Lesson = require('./../model/lesson');
+const Lesson = require('./../entity/lesson');
 
 const scheduleUrl = config.baseWebUrl.scheduleUrl;
 const baseHeader = config.baseHeader;
