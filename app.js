@@ -22,5 +22,6 @@ app.use(bodyparser);
 app.use(require('./controller/cookies').routes());
 app.use(require('./controller/lessons').routes());
 app.use(require('./controller/exams').routes());
+app.use(require('./controller/grades').routes());
 
 app.listen(port);
