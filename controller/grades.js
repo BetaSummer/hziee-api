@@ -2,7 +2,7 @@ const router = require('koa-router')();
 
 const gradeService = require('../service/grades');
 
-router.prefix('/lessons');
+router.prefix('/grades');
 
 router.get('/', gradeService.index);
 
