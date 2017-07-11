@@ -7,10 +7,10 @@ const cheerio = require('cheerio');
 
 charset(superagent);
 
-// 简化
 function getSumOfElements(list) {
   return list.reduce((s, val) => s + val, 0);
 }
+
 function getGpa(score) {
   switch (true) {
     case (score === '优秀' || score >= 95):
@@ -29,6 +29,7 @@ function getGpa(score) {
       return '';
   }
 }
+
 function getAvgOfGpa(gpaList, creditList) {
   const productList = [];
   for (let i = 0; i < gpaList.length; i += 1) {
@@ -131,7 +132,6 @@ function getCredit(url, cookie, header, stuID) {
   }
 }
 
-// 看不怎么懂结构，都是按着grades的写法写的
 module.exports = class creditService {
   static async index(ctx) {
     const cookie = ctx.headers.authorization;
@@ -144,7 +144,7 @@ module.exports = class creditService {
       ctx.body = credit;
       ctx.status = 200;
     } else {
-      ctx.throw(404, 'hahahahaha');
+      ctx.throw(404, 'The data are unavailable now');
     }
   }
 };

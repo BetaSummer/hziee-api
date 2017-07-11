@@ -28,13 +28,6 @@ function getGpa(score) {
   }
 }
 
-// function getSumOfElements(list) {
-//   let sum = 0;
-//   for (let i = 0; i < list.length; i += 1) {
-//     sum += list[i];
-//   }
-//   return sum;
-// }
 function getSumOfElements(list) {
   return list.reduce((s, val) => s + val, 0);
 }
