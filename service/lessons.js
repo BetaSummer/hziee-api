@@ -48,13 +48,9 @@ const getPeriod = (nodeArr) => {
  * @param {Array} eleArr 被删除的元素数组
  * @return {Array} 删除完毕后的数组
  */
-const deleteElements = (arr, eleArr) => {
-  eleArr.forEach((ele) => {
-    if (arr.includes(ele)) {
-      arr.splice(arr.indexOf(ele), 1);
-    }
-  });
-  return arr;
+const deleteElements = function deleteElements(arr, eleArr) {
+  return arr.filter(ele =>
+    eleArr.includes(ele));
 };
 
 /**

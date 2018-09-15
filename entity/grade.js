@@ -6,6 +6,9 @@ class Grade {
     this.secondGrade = secondGrade;
     this.gpa = gpa;
   }
+  static checkIsPassed(score) {
+    return !((score === '不及格' || score < 60));
+  }
 }
 
 module.exports = Grade;
