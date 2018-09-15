@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "7"
 script:
-  - npm install && npm run lint
+  - yarn && yarn run lint
 branches:
   only:
     - master
